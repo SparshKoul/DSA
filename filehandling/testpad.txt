@@ -1,0 +1,95 @@
+q1
+
+
+
+import java.io.*;
+
+static void appendFiles(String f1, String f2, String f3) {
+
+    try {
+
+        BufferedReader br1 = new BufferedReader(new FileReader(f1));
+        BufferedReader br2 = new BufferedReader(new FileReader(f2));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(f3));
+
+        String line;
+
+        // Copy contents of first file
+        while ((line = br1.readLine()) != null) {
+            bw.write(line);
+            bw.newLine();
+        }
+
+        // Copy contents of second file
+        while ((line = br2.readLine()) != null) {
+            bw.write(line);
+            bw.newLine();
+        }
+
+        br1.close();
+        br2.close();
+        bw.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+q2
+
+
+
+import java.io.*;
+
+static void capitalizeWords(String source, String dest) {
+
+    try {
+
+        BufferedReader br = new BufferedReader(new FileReader(source));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(dest));
+
+        String line;
+
+        while ((line = br.readLine()) != null) {
+
+            String[] words = line.split("\\s+");
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < words.length; i++) {
+
+                String word = words[i];
+
+                if (word.length() > 0) {
+                    sb.append(Character.toUpperCase(word.charAt(0)));
+                    sb.append(word.substring(1));
+                }
+
+                if (i != words.length - 1) {
+                    sb.append(" ");
+                }
+            }
+
+            bw.write(sb.toString());
+            bw.newLine();
+        }
+
+        br.close();
+        bw.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}

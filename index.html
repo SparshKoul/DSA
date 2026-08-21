@@ -1,0 +1,25 @@
+<!-- create an input text  when cliked a button it should sow unorder list of the text entered in the input text field. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="textInput" placeholder="Enter" >
+    <button onclick="addToList()">Add to List</button>
+    <ul id="list"></ul>
+
+    <script>
+        function addToList() {
+            var input = document.getElementById("textInput");
+            var list = document.getElementById("list");
+            var listItem = document.createElement("li");
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
