@@ -1,5 +1,4 @@
 package bst;
-import java.util.*;
 //binary search tree - BST
 
 public class pw1 {
@@ -141,7 +140,7 @@ public class pw1 {
 
         //construct BST from sorted array
         int[] sortedArray = {1, 2, 3, 4, 5, 6, 7};
-        Node root4 = constructBSTFromSortedArray(sortedArray, 0, sortedArray.length - 1);
+        constructBSTFromSortedArray(sortedArray, 0, sortedArray.length - 1);
         //output of construct BST from sorted array
         //input - [1,2,3,4,5,6,7]
         //output - 4 2 6 1 3 5 7

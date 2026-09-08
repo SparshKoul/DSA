@@ -268,8 +268,6 @@
     
 // }
 
-import java.util.Scanner;
-
 ////reversing array using  reversed loop
 // public class arrays {
 //     public static void reverse(int arr[]){
@@ -996,7 +994,6 @@ import java.util.Scanner;
 
 
 //second largest in an array
-import java.util.Scanner;
 public class arrays {
     public static void secondmax(int arr[]){
         int max =arr[0];
@@ -1017,7 +1014,7 @@ public class arrays {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        java.util.Scanner sc = new java.util.Scanner(System.in);
         int n=sc.nextInt();
         int arr[]=new int [n];
         for(int i=0;i<n;i++){
@@ -1030,6 +1027,7 @@ public class arrays {
         
         System.out.println();
         secondmax(arr);
+        sc.close();
 
 
     }

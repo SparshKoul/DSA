@@ -501,6 +501,7 @@ public class strings {
             sb.append(first+rem+" ");
         }
         System.out.println(sb);
+        sc.close();
 
     }
 }

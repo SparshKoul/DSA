@@ -1,7 +1,4 @@
 //zigzag level order traversal of binary tree using nth level method 
-package trees;
-
-import java.util.*;
 
 public class pw3 {
 

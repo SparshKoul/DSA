@@ -1,6 +1,3 @@
-package zcourse.trees;
-
-import java.util.*;
 
 public class trees3 {
     //node class

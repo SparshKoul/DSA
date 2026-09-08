@@ -1,4 +1,3 @@
-package zcourse.trees;
 import java.util.*;
 
 public class trees1 {
@@ -71,7 +70,7 @@ public class trees1 {
             if (root == null) {
                 return;
             }
-            Queue<Node> queue = new LinkedList<>();
+            Queue<Node> queue = new java.util.LinkedList<>();
             queue.add(root);
             queue.add(null); // marker for end of level
 
@@ -103,7 +102,7 @@ public class trees1 {
         return;
     }
 
-    Queue<Node> queue = new LinkedList<>();
+    Queue<Node> queue = new java.util.LinkedList<>();
     queue.add(root);
 
     while (!queue.isEmpty()) {
@@ -194,22 +193,22 @@ public class trees1 {
         //start frim end ...build right child first then left child and then root node.
 
 
-        BinaryTree tree1 = new BinaryTree();
-        Node root = tree1.buildTree(tree);
+        BinaryTree.idx = -1;
+        Node root = BinaryTree.buildTree(tree);
         System.out.println(root.data);//PRINTS THE ROOT NODE OF THE BINARY TREE, WHICH IS 1. THIS IS TO CHECK IF THE TREE IS BUILT CORRECTLY OR NOT, IF WE GET 1 THEN IT MEANS THAT THE TREE IS BUILT CORRECTLY, OTHERWISE THERE IS SOME ISSUE IN BUILDING THE TREE.
 
         System.out.println("Preorder traversal:");
-        tree1.preorder(root);//output: 1 2 4 5 3 6
+        BinaryTree.preorder(root);//output: 1 2 4 5 3 6
 
         System.out.println("Inorder traversal:");
-        tree1.inorder(root);//output: 4 2 5 1 3 6
+        BinaryTree.inorder(root);//output: 4 2 5 1 3 6
 
         System.out.println("Postorder traversal:");
-        tree1.postorder(root);//output: 4 5 2 6 3 1
+        BinaryTree.postorder(root);//output: 4 5 2 6 3 1
 
         System.out.println("Level order traversal:");
 
-        tree1.levelOrder(root);//output: 1 
+        BinaryTree.levelOrder(root);//output: 1 
                             //          / \
                             //         2   3
                             //        / \   \
@@ -221,20 +220,20 @@ public class trees1 {
 
 
         System.out.println("Height of binary tree:");
-        System.out.println(tree1.height(root));//output: 3
+        System.out.println(BinaryTree.height(root));//output: 3
 
 
         System.out.println("Count of nodes in binary tree:");
-        System.out.println(tree1.countNodes(root));//output: 6
+        System.out.println(BinaryTree.countNodes(root));//output: 6
 
 
         System.out.println("Sum of all nodes in binary tree:");
-        System.out.println(tree1.sumNodes(root));//output: 21 (1+2+4+5+3+6)
+        System.out.println(BinaryTree.sumNodes(root));//output: 21 (1+2+4+5+3+6)
 
 
 
         System.out.println("Size of binary tree:");
-        System.out.println(tree1.size(root));//output: 6 (same as count of nodes in binary tree)
+        System.out.println(BinaryTree.size(root));//output: 6 (same as count of nodes in binary tree)
 
     }
     

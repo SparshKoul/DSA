@@ -471,7 +471,18 @@
 
 
 //SWAP 2 NODES IN DOUBLY LINKED LIST
-Node swapNodes(Node head, int x, int y) {
+public class arr {
+    static class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    static Node swapNodes(Node head, int x, int y) {
 
     // If list empty or values same, no swap
     if (head == null || x == y)
@@ -529,4 +540,5 @@ Node swapNodes(Node head, int x, int y) {
     nodeY.prev= temp;
     return head;
 
+    }
 }

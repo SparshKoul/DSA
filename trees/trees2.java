@@ -1,4 +1,3 @@
-package zcourse.trees;
 import java.util.*;
 
 public class trees2 {
@@ -183,7 +182,7 @@ public class trees2 {
                 return;
             }
             Map<Integer, Integer> map = new TreeMap<>(); // TreeMap to maintain sorted order of horizontal distances
-            Queue<Pair> queue = new LinkedList<>();
+            Queue<Pair> queue = new java.util.LinkedList<>();
             queue.add(new Pair(root, 0)); // Pair of node and its horizontal distance
 
             while (!queue.isEmpty()) {

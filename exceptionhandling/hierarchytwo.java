@@ -169,8 +169,10 @@ public class hierarchytwo {
 
     public static void main(String[] args) {
         try {
-            String s = null;
-            System.out.println(s.length());
+            String s = args.length == 0 ? null : args[0];
+            if (s != null) {
+                System.out.println(s.length());
+            }
         }
         catch (RuntimeException  e) {
             System.out.println("Caught: Runtime");

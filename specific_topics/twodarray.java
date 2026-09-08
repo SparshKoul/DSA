@@ -39,6 +39,7 @@ public class twodarray {
         //smallest
         int smallest=smallestIn2D(matrix);
         System.out.println("smallest is "+ smallest); 
+        sc.close();
 
 
 

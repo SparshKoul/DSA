@@ -1,5 +1,5 @@
 public class static12 {
-    class Student{
+    static class Student{
     String name;
     int roll;
 
@@ -17,25 +17,25 @@ public class static12 {
 
     public static void main(String[] args) {
     
-        Student s1 = new Student();
-        s1.schoolName = "BBPS";
+        new Student();
+        Student.schoolName = "BBPS";
 
-        Student s2 = new Student();
-        System.out.println(s2.schoolName);
+        new Student();
+        System.out.println(Student.schoolName);
 
-        Student s3 =new Student();
-        System.out.println(s3.schoolName);
+        new Student();
+        System.out.println(Student.schoolName);
 
-        Student s4 =new Student();
-        s4.schoolName ="dav";
-        System.out.println(s4.schoolName);
+        new Student();
+        Student.schoolName ="dav";
+        System.out.println(Student.schoolName);
         //  after this s4 name of all above s123  all will become saqme as s4.
 
 
-        System.out.println(s1.schoolName);
-        System.out.println(s2.schoolName);
-        System.out.println(s3.schoolName);
-        System.out.println(s4.schoolName);
+        System.out.println(Student.schoolName);
+        System.out.println(Student.schoolName);
+        System.out.println(Student.schoolName);
+        System.out.println(Student.schoolName);
     }
 
     //output-bbps bbps bpps dav dav dav dav dav ,,,reason below.

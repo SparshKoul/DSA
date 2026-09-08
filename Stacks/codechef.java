@@ -1,6 +1,4 @@
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 
 
@@ -39,7 +37,7 @@ class Codechef{
     }
     
     public static int evaluatepostfix(String exp){
-        Stack <Integer> stack =new stack<>();
+        Stack <Integer> stack =new Stack<>();
         for(int i=0;i<exp.length();i++){
             char ch=exp.charAt(i);
             if(Character.isDigit(ch)){
@@ -84,7 +82,7 @@ class Codechef{
         if(s.length() %2 !=0){
             return -1;
         }
-        Stack <Character> Stack=new Stack<>();
+        Stack <Character> stack=new Stack<>();
         
         //remove balance oairs
         for(int i=0;i<s.length();i++){
@@ -99,7 +97,7 @@ class Codechef{
                     stack.pop();
                 }
                 else{
-                    stack.push();
+                    stack.push(ch);
                 }
                 
             }
@@ -134,32 +132,30 @@ class Codechef{
     }
     public static boolean duplicateparethesis(String str){
         
-        Stack <Integer> Stack =new Stack<>();
+        Stack <Character> stack =new Stack<>();
         for(int i=0;i<str.length();i++){
             char ch=str.charAt(i);
             
             //closing
             if(ch==')'){
                 int count=0;
-                while(s.peek() !='('){
-                    Stack.pop();
+                while(!stack.isEmpty() && stack.peek() !='('){
+                    stack.pop();
                     count++;
                 }
-                if(count<0){
-                    return false;
+                if(stack.isEmpty() || count == 0){
+                    return true;
                 }
-                else{
-                    Stack.pop();
-                }
+                stack.pop();
             }
             else{
-                Stack.push(ch);
+                stack.push(ch);
             }
         }
         return false;
     }
     public static boolean validparentesis(String str){
-        Stack<Integer> stack=new stack<>();
+        Stack<Character> stack=new Stack<>();
         
         for(int i=0;i<str.length();i++){
             char ch=str.charAt(i);
@@ -194,8 +190,6 @@ class Codechef{
 
     public static void nextgreaterelement(int arr[]){
         int n=arr.length;
-        int nge[]=new int [n];
-        
         for(int i=0;i<n;i++){
             int next=-1;
             for(int j=i+1;j<n;j++){

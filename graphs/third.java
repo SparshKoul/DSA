@@ -101,6 +101,7 @@ public class third {
             }
         }
     }
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         
         int V=7; // number of vertices

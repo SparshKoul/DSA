@@ -55,7 +55,7 @@ public class pw2 {
         if (root == null) {
             return;
         }
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> queue = new java.util.LinkedList<>();
         queue.add(root);
         queue.add(null); // marker for end of level
 

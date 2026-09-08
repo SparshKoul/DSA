@@ -1,6 +1,6 @@
 public class consstructor3 {
     
-class MyStudent {
+static class MyStudent {
     String name;
     int roll;
 
@@ -21,7 +21,7 @@ class MyStudent {
 
 
     public static void main(String[] args) {
-        MyStudent s1 =new MyStudent(); //these mystudent is the name of class, not the fxn name , as in contructor name of cons has to be same as class , so dont confuse
+        new MyStudent(); //these mystudent is the name of class, not the fxn name , as in contructor name of cons has to be same as class , so dont confuse
         
 
         MyStudent s2 = new MyStudent("sparsh");

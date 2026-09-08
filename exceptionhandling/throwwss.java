@@ -69,7 +69,9 @@ import java.io.IOException;
 class throwwss {
     static void C() throws IOException {
 
-        FileReader fr = new FileReader("abc.txt");
+        try (FileReader fr = new FileReader("abc.txt")) {
+            fr.read();
+        }
 
     }
 

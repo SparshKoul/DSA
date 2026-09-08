@@ -1,7 +1,4 @@
-package zcourse.trees;
 import java.util.*;
-
-import zcourse.trees.trees2.BinaryTree.Pair;
 
 public class testpad {
     class Node {
@@ -15,6 +12,17 @@ public class testpad {
             this.right = null;
         }
     }
+
+    static class Pair {
+        Node node;
+        int hd;
+
+        public Pair(Node node, int hd) {
+            this.node = node;
+            this.hd = hd;
+        }
+    }
+
     //print specific level of binary tree left to right
     public static void printLevel(Node root, int level,StringBuilder sb) {
         if (root == null) {
@@ -140,7 +148,7 @@ public class testpad {
                 return;
             }
             Map<Integer, Integer> map = new TreeMap<>(); // TreeMap to maintain sorted order of horizontal distances
-            Queue<Pair> queue = new LinkedList<>();
+            Queue<Pair> queue = new java.util.LinkedList<>();
             queue.add(new Pair(root, 0)); // Pair of node and its horizontal distance
 
             while (!queue.isEmpty()) {

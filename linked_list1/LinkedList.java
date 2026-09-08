@@ -192,7 +192,9 @@
 //         System.out.println("null");
 //     }
 
-//     public static void main(String[] args) {
+//     public
+
+//  static void main(String[] args) {
 //         LinkedList ll=new LinkedList();
 //         // ll.head=new Node(1);
 //         // ll.head.next=new Node(2);

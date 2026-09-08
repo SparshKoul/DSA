@@ -1,6 +1,4 @@
-package trees;
 //path sum  1,2,3.
-import java.util.*;
 
 public class pw5 {
     public static class Node {

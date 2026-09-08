@@ -223,6 +223,7 @@ public class matrix {
 
         if(C1!=R2){
             System.out.println("matrix multiplication not possible");
+            sc.close();
             return;
         }
 
@@ -244,6 +245,7 @@ public class matrix {
         }
 
         multiplyMatrix(A,B,R1,C1,R2,C2);
+        sc.close();
 
 
         //

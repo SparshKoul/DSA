@@ -9,7 +9,6 @@ public class start {
 
 
         ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<String> list2 = new ArrayList<>();
 
         //operations in arraylist
 

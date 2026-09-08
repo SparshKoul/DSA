@@ -149,6 +149,7 @@ public class cycledetection5 {
     }
     
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
         ArrayList<Edge>[] graph = new ArrayList[7];

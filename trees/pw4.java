@@ -1,7 +1,5 @@
-package zcourse.trees;
 import java.util.*;
 
-import javax.swing.tree.TreeNode;
 
 public class pw4 {
     public static class Node {
@@ -34,8 +32,9 @@ public class pw4 {
             Node root = new Node(rootValue);
 
             // Find the index of the root in the inorder array
-            while (inorder[inStart] != rootValue) {
-                inStart++;
+            int inRootIndex = inStart;
+            while (inorder[inRootIndex] != rootValue) {
+                inRootIndex++;
             }
 
             int leftTreeSize = inRootIndex - inStart;
@@ -50,7 +49,7 @@ public class pw4 {
 
 
         //print path from root to leaf
-        public void paths(TreeNode root,String path,List<String> ans) {
+        public static void paths(Node root,String path,List<String> ans) {
 
         if(root == null) {
             return;
@@ -59,16 +58,16 @@ public class pw4 {
         // leaf node k liye
         if(root.left == null &&root.right == null) {
 
-            ans.add(path + root.val);
+            ans.add(path + root.data);
 
             return;
         }
-        paths(root.left,path + root.val + "->",ans);
+        paths(root.left,path + root.data + "->",ans);
 
-        paths(root.right,path + root.val + "->",ans);
+        paths(root.right,path + root.data + "->",ans);
     }
 
-    public List<String> binaryTreePaths(TreeNode root) {
+    public static List<String> binaryTreePaths(Node root) {
 
         List<String> ans = new ArrayList<>();
 
@@ -83,15 +82,16 @@ public class pw4 {
         int[] inorder = {9, 3, 15, 20, 7};
 
         Node root = buildTree(preorder, inorder);
+        System.out.println(binaryTreePaths(root));
         // You can add code here to print the tree or verify its structure
 
 
         //print path from root to leaf
-        TreeNode root2 = new TreeNode(1);
-        root2.left = new TreeNode(2);
-        root2.right = new TreeNode(3);
-        root2.left.left = new TreeNode(4);
-        root2.left.right = new TreeNode(5);
+        Node root2 = new Node(1);
+        root2.left = new Node(2);
+        root2.right = new Node(3);
+        root2.left.left = new Node(4);
+        root2.left.right = new Node(5);
         List<String> paths = binaryTreePaths(root2);
         System.out.println(paths); // Output: ["1->2->4", "1->2->5", "1->3"]
 

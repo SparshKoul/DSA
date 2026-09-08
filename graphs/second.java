@@ -48,6 +48,7 @@ public class second {
             System.out.println(edge.dest + " (weight: " + edge.weight + ")");
         }
     }
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         
         int V = 4; // number of vertices

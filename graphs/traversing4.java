@@ -138,6 +138,7 @@ public class traversing4 {
 
 
     
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         int V = 7; // number of vertices
         ArrayList<Edge>[] graph = new ArrayList[V];

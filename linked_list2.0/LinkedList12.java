@@ -355,7 +355,6 @@ public class LinkedList12 {
         System.out.println();
     }   
     public static void main(String[] args) {
-        LinkedList12 list = new LinkedList12();
         Node head = new Node(10);
         head.next = new Node(20);
         head.next.prev = head;

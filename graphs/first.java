@@ -70,6 +70,7 @@ public class first {
         }
         return destinations;
     }
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         int V = 4;// Number of vertices
 
