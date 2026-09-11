@@ -4,55 +4,78 @@ import java.util.*;
 //file 7= count distinct islands in a 2d grid
 
 public class distisland {
-    public int numDistinctIslands(int[][] grid) {
-        int rows = grid.length;
-        int cols = grid[0].length;
-        boolean[][] visited = new boolean[rows][cols];
-        Set<String> distinctIslands = new HashSet<>();
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+
+     public int countDistinctIslands(int[][] grid) {
+
+        int n = grid.length;
+        int m = grid[0].length;
+
+        boolean[][] visited = new boolean[n][m];
+
+        HashSet<ArrayList<String>> set = new HashSet<>();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+
                 if (grid[i][j] == 1 && !visited[i][j]) {
-                    StringBuilder shape = new StringBuilder();
-                    dfs(grid, visited, i, j, shape, "o"); // "o" for origin
-                    distinctIslands.add(shape.toString());
+
+                    ArrayList<String> shape = new ArrayList<>();
+
+                    dfs(grid, i, j, i, j, visited, shape);
+
+                    set.add(shape);
                 }
             }
         }
 
-        return distinctIslands.size();
+        return set.size();
     }
 
-    private void dfs(int[][] grid, boolean[][] visited, int row, int col, StringBuilder shape, String direction) {
-        int rows = grid.length;
-        int cols = grid[0].length;
+    private void dfs(int[][] grid,
+                     int i, int j,
+                     int baseI, int baseJ,
+                     boolean[][] visited,
+                     ArrayList<String> shape) {
 
-        if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] == 0 || visited[row][col]) {
+        // Out of bounds
+        if (i < 0 || i >= grid.length ||
+            j < 0 || j >= grid[0].length ||
+            grid[i][j] == 0 ||
+            visited[i][j]) {
             return;
         }
 
-        visited[row][col] = true;
-        shape.append(direction);
+        visited[i][j] = true;
 
-        dfs(grid, visited, row - 1, col, shape, "u"); // up
-        dfs(grid, visited, row + 1, col, shape, "d"); // down
-        dfs(grid, visited, row, col - 1, shape, "l"); // left
-        dfs(grid, visited, row, col + 1, shape, "r"); // right
+        // Store relative position
+        shape.add((i - baseI) + "," + (j - baseJ));
 
-        shape.append("b"); // backtrack
+        // Down
+        dfs(grid, i + 1, j, baseI, baseJ, visited, shape);
+
+        // Up
+        dfs(grid, i - 1, j, baseI, baseJ, visited, shape);
+
+        // Right
+        dfs(grid, i, j + 1, baseI, baseJ, visited, shape);
+
+        // Left
+        dfs(grid, i, j - 1, baseI, baseJ, visited, shape);
     }
+    
 
     public static void main(String[] args) {
         int[][] grid = {
                 {1, 1, 0, 0, 0},
                 {1, 0, 0, 1, 1},
-                {0, 0, 0, 1, 1},
+                {0, 0, 0, 1, 0},
                 {0, 1, 0, 0, 0}
         };
-
         distisland solution = new distisland();
-        int distinctIslandsCount = solution.numDistinctIslands(grid);
+        int distinctIslandsCount = solution.countDistinctIslands(grid);
         System.out.println("Number of distinct islands: " + distinctIslandsCount);
+
+
     }
-    
 }
