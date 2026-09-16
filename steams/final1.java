@@ -7,6 +7,7 @@ package steams;
 //terminal operations : forEach(), collect(), reduce(), count(), min(), max()
 
 import java.util.*;
+import java.util.stream.*;
 
 public class final1 {
     public static void main(String[] args) {
@@ -115,8 +116,21 @@ public class final1 {
 
 
         //collectors
+        List<Integer> collected = nums.stream().filter(x-> x % 2 == 0).collect(Collectors.toList());
+        System.out.println(collected);
+
+
+
+        //if we want unique elements that are even in a list .
+        Set<Integer> collectedSet = nums.stream().filter(x-> x % 2 == 0).collect(Collectors.toSet());
+        System.out.println(collectedSet);
         
 
+
+        //string 
+        List<String> namess = Arrays.asList("Aman", "Rahul", "Rohit");
+        String result =namess.stream().collect(Collectors.joining("-"));
+        System.out.println(result);
 
     }
 
