@@ -27,6 +27,8 @@ public class introduction {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
 
         list.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
+        System.out.print("hello\n");
+        System.out.println("world\n");
 
 
 
