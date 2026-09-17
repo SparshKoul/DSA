@@ -80,7 +80,6 @@ class one {
         for (int i = 0; i < n; i++) {
             if (arr[i].toLowerCase().startsWith(x.toLowerCase())) {
                 System.out.println(arr[i]);
-                sc.close();
                 return;
             }
         }

@@ -3,7 +3,19 @@ package lamdafxn;
 //file for lamda fxn
 import java.time.*;
 import java.util.*;
+import java.time.format.*;
 public class finallamda1 {
+    static class Student {
+        String name;
+        int age;
+        int marks;
+
+        Student(String name, int age, int marks) {
+            this.name = name;
+            this.age = age;
+            this.marks = marks;
+        }
+    }
     public static void main(String[] args) {
 
         List<Student> list = new ArrayList<>();
@@ -40,10 +52,14 @@ public class finallamda1 {
 
         //getting individual components of date
         int year = date.getYear();
-        int month = date.getMonthValue();
+        int monthValue = date.getMonthValue();
+        //beneth2 give same outpur of name.
+        Month month = date.getMonth();
         String monthname = date.getMonth().toString();
         int day = date.getDayOfMonth();
+
         System.out.println("Year: " + year);
+        System.out.println("Month Value: " + monthValue);
         System.out.println("Month: " + month);
         System.out.println("Month Name: " + monthname);
         System.out.println("Day: " + day);
@@ -227,6 +243,125 @@ public class finallamda1 {
 
 
 
+
+        //getting individual components of date and time
+        int year1 = dateTime.getYear();
+        int month1 = dateTime.getMonthValue();
+        String monthname1 = dateTime.getMonth().toString();
+        int day1 = dateTime.getDayOfMonth();
+        int hour1 = dateTime.getHour();
+        int minute1 = dateTime.getMinute();
+        int second1 = dateTime.getSecond();
+
+
+        System.out.println("Year: " + year1);
+        System.out.println("Month: " + month1);
+        System.out.println("Month Name: " + monthname1);
+        System.out.println("Day: " + day1);
+        System.out.println("Hour: " + hour1);
+        System.out.println("Minute: " + minute1);
+        System.out.println("Second: " + second1);  
+        
+        
+
+
+        //adding and subtracting date and time
+        LocalDateTime radomdatetime1 =LocalDateTime.of(2023, 10, 1, 10, 30, 45);
+        LocalDateTime newDateTime1 = radomdatetime1.plusDays(5).minusHours(2).plusMinutes(30);
+        System.out.println("Random Date and Time: " + radomdatetime1);
+        System.out.println("New Date and Time: " + newDateTime1);
+
+
+
+
+        //extracting date and time from LocalDateTime
+        LocalDateTime dateTime4 = LocalDateTime.of(2023, 10, 1, 10, 30, 45);
+        LocalDate extractedDate = dateTime4.toLocalDate();
+        LocalTime extractedTime = dateTime4.toLocalTime();
+        System.out.println("Extracted Date: " + extractedDate);
+        System.out.println("Extracted Time: " + extractedTime);
+
+
+
+
+
+
+        //comparing date and time
+        LocalDateTime dateTime5 = LocalDateTime.of(2023, 10, 1, 10, 30, 45);
+        LocalDateTime dateTime6 = LocalDateTime.of(2023, 10, 1, 11, 15, 30);
+        if(dateTime5.isBefore(dateTime6)) {
+            System.out.println(dateTime5 + " is before " + dateTime6);
+        } else if(dateTime5.isAfter(dateTime6)) {
+            System.out.println(dateTime5 + " is after " + dateTime6);
+        } else { 
+            System.out.println(dateTime5 + " is equal to " + dateTime6);
+        }
+
+
+
+
+
+
+        //periods and durations used to calc difference between dates and times
+
+        //here days years and months are calculated not year month day.
+
+        LocalDate startDate = LocalDate.of(2023, 10, 1);
+        LocalDate endDate = LocalDate.of(2023, 10, 15);
+        Period p = Period.between(startDate, endDate);
+        System.out.println("Period between " + startDate + " and " + endDate + ": " + p.getDays() + " days "+ p.getMonths() + " months "+ p.getYears() + " years");
+
+
+
+
+
+        //ex age calc
+        LocalDate birthDate = LocalDate.of(1990, 5, 15);
+        LocalDate currentDate = LocalDate.now();
+        Period age = Period.between(birthDate, currentDate);
+        System.out.println("Age: " + age.getYears() + " years " + age.getMonths() + " months " + age.getDays() + " days");
+
+
+
+
+
+        //duration for difference between times
+        LocalTime startTime = LocalTime.of(10,30,45);
+        LocalTime endTime = LocalTime.of(12,15,30);
+        Duration d = Duration.between(startTime, endTime);
+        System.out.println("Duration between " + startTime + " and " + endTime + ": " + d.toHours() + " hours " + d.toMinutesPart() + " minutes " + d.toSecondsPart() + " seconds");
+        System.out.println("Duration between " + startTime + " and " + endTime + ": " + d.toMinutes() + " minutes " + d.toSecondsPart() + " seconds");
+
+
+
+
+
+
+
+        //formating date and time
+        //suppose java gives date in 2023-10-01T10:30:45 format but we want it in dd-MM-yyyy HH:mm:ss format then we can use DateTimeFormatter class.
+
+
+        LocalDate dt = LocalDate.of(2023, 10, 1);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = dt.format(dtf);
+        System.out.println("Formatted Date: " + formattedDate);
+
+
+
+        //formatting time
+        LocalTime tm = LocalTime.of(10, 30, 45);
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String formattedTime = tm.format(dtf1);
+        System.out.println("Formatted Time: " + formattedTime);
+
+        //formatting date and time
+
+        LocalDateTime dateTime7 = LocalDateTime.of(2023, 10, 1, 10, 30, 45);
+        System.out.println("Original Date and Time: " + dateTime7);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDateTime = dateTime7.format(formatter);
+        System.out.println("Formatted Date and Time: " + formattedDateTime);
 
     }
     
