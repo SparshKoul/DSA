@@ -204,6 +204,7 @@ public class finallamda1 {
 
         LocalDateTime dateTime = LocalDateTime.now();
         System.out.println("Current date and time: " + dateTime);
+        //output: Current date and time: 2023-10-01T10:30:45.123456789 (example output)
 
 
         //creating specific date and time
