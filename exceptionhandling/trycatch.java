@@ -1,5 +1,5 @@
 package exceptionhandling;
-//try catch three :try-catch is used to handle exceptions so that the program doesn't terminate abruptly..
+//try catch 3:try-catch is used to handle exceptions so that the program doesn't terminate abruptly..
 
 //try {
     // Code that may cause an exception

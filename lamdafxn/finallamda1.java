@@ -39,6 +39,7 @@ public class finallamda1 {
         System.out.println("Date after 10 days: " + futureDate);
         LocalDate pastDate = date.minusMonths(2);
         System.out.println("Date 2 months ago: " + pastDate);
+        
 
 
 
