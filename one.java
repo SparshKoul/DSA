@@ -63,28 +63,34 @@
 
 
 import java.util.*;
-
 class one {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int n = sc.nextInt();
-        String arr[] = new String[n];
-
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.next();
+    public static void topk(int[] arr,int k){
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        for(int s : arr){
+            pq.add(s);
         }
+        while(k > 0){
 
-        String x = sc.next();
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i].toLowerCase().startsWith(x.toLowerCase())) {
-                System.out.println(arr[i]);
-                return;
+            if(k == 1){
+                System.out.print(pq.poll());
             }
+            else{
+                System.out.print(pq.poll()+" ");
+            }
+            k--;
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0 ;i < n ; i++){
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+        if(arr.length > k){
+            topk(arr,k);
         }
 
-        System.out.println("No");
-        sc.close();
     }
 }
